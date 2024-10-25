@@ -15,9 +15,7 @@ from vars import questions, reply_keyboard
 
 # Enable logging
 logging.basicConfig(
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    level=logging.INFO
-)
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 # set higher logging level for httpx to avoid
 # all GET and POST requests being logged
 logging.getLogger("httpx").setLevel(logging.WARNING)
@@ -34,8 +32,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     data = []
     await update.message.reply_text(
         questions[0],
-        reply_markup=markup,
-    )
+        reply_markup=markup)
 
 
 async def add_data(update: Update, context: ContextTypes.DEFAULT_TYPE):

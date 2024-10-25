@@ -16,8 +16,7 @@ def base_to_string(b: str):     # на вход номер договора 1.21
     number = b[0]
     b_string = b[2::]
     b_string = b_string.split('/')
-    base_string = f'Договор № {number}.{b_string[0]}/{b_string[1]}/{b_string[2]} от {b_string[0]} {months_list[int(b_string[1])]} 20{
-            b_string[2]} г.'
+    base_string = f'Договор № {number}.{b_string[0]}/{b_string[1]}/{b_string[2]} от {b_string[0]} {months_list[int(b_string[1])]} 20{b_string[2]} г.'
     return base_string      # строка основание на выход
 
 
