@@ -47,8 +47,7 @@ async def add_data(update: Update, context: ContextTypes.DEFAULT_TYPE):
         data.append(update.message.text)
         filename = make_invoice(data)
         path = f'C:/PYTHON/invoice_bot/templates/{filename}.xlsx'
-        await context.bot.send_document(chat_id=update.effective_chat.id,
-                                        document=path, reply_markup=markup)
+        await context.bot.send_document(chat_id=update.effective_chat.id, document=path, reply_markup=markup)
 
 
 if __name__ == "__main__":

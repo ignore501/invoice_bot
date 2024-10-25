@@ -7,8 +7,7 @@ from vars import list_of_months, invoice_templates
 def date_to_string(d: str):     # на вход дата строка 17.12.1987,
     date_list = d.split('.')    # строка с номером счета и датой на выход
     months_list = list_of_months
-    main_string = f'Счет на оплату № 1.{d}-C от {int(date_list[0])} {
-        months_list[int(date_list[1])]} {int(date_list[-1])} г.'
+    main_string = f'Счет на оплату № 1.{d}-C от {int(date_list[0])} {months_list[int(date_list[1])]} {int(date_list[-1])} г.'
     return main_string
 
 
@@ -17,8 +16,7 @@ def base_to_string(b: str):     # на вход номер договора 1.21
     number = b[0]
     b_string = b[2::]
     b_string = b_string.split('/')
-    base_string = f'Договор № {number}.{b_string[0]}/{b_string[1]}/{
-        b_string[2]} от {b_string[0]} {months_list[int(b_string[1])]} 20{
+    base_string = f'Договор № {number}.{b_string[0]}/{b_string[1]}/{b_string[2]} от {b_string[0]} {months_list[int(b_string[1])]} 20{
             b_string[2]} г.'
     return base_string      # строка основание на выход
 
