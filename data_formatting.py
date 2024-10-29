@@ -14,7 +14,7 @@ def date_to_string(d: str):     # на вход дата строка 17.12.1987
 def base_to_string(base: str):     # на вход номер договора 1.21/12/24,
     base_date = base.replace('/', '.').split('.')
     base_string = f'Договор № {base} от {base_date[1]} {
-        list_of_months[int(base_date[1])]} 20{base_date[2]} г.'
+        list_of_months[int(base_date[2])]} 20{base_date[3]} г.'
     return base_string      # строка основание на выход
 
 

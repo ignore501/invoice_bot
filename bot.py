@@ -4,15 +4,11 @@ import os
 
 from telegram import ReplyKeyboardMarkup, Update
 from telegram.ext import (
-    Application,
-    CommandHandler,
-    ContextTypes,
-    MessageHandler,
-    filters,
-    CallbackQueryHandler
+    Application, CommandHandler,
+    ContextTypes, MessageHandler,
+    filters, CallbackQueryHandler
 )
 import telegramcalendar
-
 from excel_file_edit import make_invoice
 from vars import questions, reply_keyboard, pictures
 
@@ -41,14 +37,14 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
 
 async def calendar_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data.append(update.message.text)    # Записываем наименование банка
-    await update.message.reply_photo(photo=pictures[1])
+    # await update.message.reply_photo(photo=pictures[1])
     await update.message.reply_text(
         text=questions[1],  # Введите дату счёта:
         reply_markup=telegramcalendar.create_calendar())  # Создаем календарь
 
 
 async def inline_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.effective_chat.send_action(action='typing')
+    # await update.effective_chat.send_action(action='typing')
     selected, date = await telegramcalendar.process_calendar_selection(update)
     if selected:    # Дата выбрана
         await update.effective_chat.send_action(action='typing')
@@ -67,6 +63,8 @@ async def add_data(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if 1 < len(data) < 6:
         data.append(update.message.text)    # Записываем данные
+        if pictures[len(data)] != '':
+            await update.effective_chat.send_photo(photo=pictures[len(data)])
         await update.message.reply_text(questions[len(data)])
     elif len(data) == 6:
         data.append(update.message.text)     # Записываем данные

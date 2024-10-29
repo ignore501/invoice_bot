@@ -23,10 +23,10 @@ list_of_months = [0, 'Января', 'Февраля', 'Марта', 'Апрел
 invoice_templates = {"АЛЬФА-БАНК": 'alpha', "КОНТУР-БАНК": 'kontur',
                      "СБЕРБАНК": 'sber', "Т-БАНК": 't-bus'}
 
-pictures = ['', 'C:/PYTHON/invoice_bot/pictures/date_place.png',
+pictures = ['',
+            'C:/PYTHON/invoice_bot/pictures/date_place.png',
             'C:/PYTHON/invoice_bot/pictures/contractor_info_place.png',
             '',
             'C:/PYTHON/invoice_bot/pictures/base_place.png',
-            'C:/PYTHON/invoice_bot/type_of_work_place.png',
-            '',
+            'C:/PYTHON/invoice_bot/pictures/type_of_work_place.png',
             '']
